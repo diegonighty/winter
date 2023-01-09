@@ -1,0 +1,29 @@
+[versions]
+spigot = "1.16.5-R0.1-SNAPSHOT"
+
+plugin-yml = "0.5.2"
+shadow-jar = "7.1.2"
+
+kyori = "4.12.0"
+configurate = "4.1.2"
+
+junit = "5.9.0"
+guice = "5.1.0"
+
+[libraries]
+spigot = { group = "org.spigotmc", name = "spigot-api", version.ref = "spigot" }
+guice = { group = "com.google.inject", name = "guice", version.ref = "guice" }
+
+junit-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit" }
+junit-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit" }
+
+configurate-core = { group = "org.spongepowered", name = "configurate-core", version.ref = "configurate" }
+configurate-yaml = { group = "org.spongepowered", name = "configurate-yaml", version.ref = "configurate" }
+
+kyori-api = { group = "net.kyori", name = "adventure-api", version.ref = "kyori" }
+kyori-minimessage = { group = "net.kyori", name = "adventure-text-minimessage", version.ref = "kyori" }
+kyori-plain = { group = "net.kyori", name = "adventure-text-serializer-plain", version.ref = "kyori" }
+
+[plugins]
+plugin-yml = { id = "net.minecrell.plugin-yml.bukkit", version.ref = "plugin-yml" }
+shadow-jar = { id = "com.github.johnrengelman.shadow", version.ref = "shadow-jar" }

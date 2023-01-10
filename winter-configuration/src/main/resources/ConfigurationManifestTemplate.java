@@ -11,28 +11,17 @@ import org.spongepowered.configurate.ConfigurateException;
 import org.spongepowered.configurate.yaml.YamlConfigurationLoader;
 
 import java.nio.file.Path;
+import java.io.IOException;
 
 public class <class_name> extends AbstractModule {
-
-		CommentedConfigurationNode load(Path folder, String name) throws ConfigurateException {
-				var loader = YamlConfigurationLoader.builder()
-						.path(folder.resolve(name + ".yml"))
-						.defaultOptions(WinterConfigurationOptionsProvider.apply())
-						.build();
-
-				CommentedConfigurationNode node = loader.load();
-				loader.save(node);
-
-				return node;
-		}
 
 	// Auto generated code //
 <el>
 	@Provides @Singleton
 	public <el_type> provide<el_name>(@DataFolder Path folder) {
 		try {
-			return load(folder, "<el_name>").get(<el_type>.class);
-		} catch (ConfigurateException e) {
+			return ConfigurationHelper.load(folder, "<el_name>").get(<el_type>.class);
+		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
 	}

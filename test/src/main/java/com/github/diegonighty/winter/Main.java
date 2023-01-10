@@ -23,6 +23,6 @@ public class Main extends JavaPlugin {
 
 		}, new ConfigurationManifest()).injectMembers(this);
 
-		System.out.println(test.test().isEnabled());
+		System.out.println(test.test().enabled());
 	}
 }

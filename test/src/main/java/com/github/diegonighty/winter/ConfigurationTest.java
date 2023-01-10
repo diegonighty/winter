@@ -5,23 +5,13 @@ import org.spongepowered.configurate.objectmapping.ConfigSerializable;
 import org.spongepowered.configurate.objectmapping.meta.Comment;
 
 @Configuration(name = "config")
-public class ConfigurationTest {
-
-	private ConfigurationTestPath test;
-
-	public ConfigurationTestPath test() {
-		return test;
-	}
+public record ConfigurationTest(ConfigurationTestPath test) {
 
 	@ConfigSerializable
-	public static class ConfigurationTestPath {
+		public record ConfigurationTestPath(
+				@Comment("This is a test") boolean enabled
+	) {
 
-		@Comment("This is a test")
-		private boolean enabled = true;
-
-		public boolean isEnabled() {
-			return enabled;
-		}
 	}
 
 }
